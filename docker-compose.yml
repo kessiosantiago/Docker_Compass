@@ -1,0 +1,14 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - /mnt/efs/wordpress:/var/www/html
+    environment:
+      TZ: America/Fortaleza
+      WORDPRESS_DB_HOST: database-principal.cjqjm5mqttbn.us-east-1.rds.amazonaws.com
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: jk100991
+      WORDPRESS_DB_NAME: database-principal
+    ports:
+      - 80:80
